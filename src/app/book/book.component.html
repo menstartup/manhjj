@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-sm-3" style="background-color:lavender;" style="height: 500px">
+    <h3>my gallery</h3>
+    </div>
+    <div class="col-sm-9" style="background-color:lavenderblush;">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+        </li>
+        
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row">
+            <div class="col-lg-3" *ngFor = "let item of updateData">
+              <div class="card-group">
+                <div class="card" style="margin: 10px;height:450px" >
+                  <img class="card-img-top" data-src="{{item.img}}" style="height:300px" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title">{{item.title}}</h4>
+                    <p class="card-text">{{item.id}}</p>
+                    <!-- Button trigger modal -->
+                    <div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <div class="card"  >
+         <img class="card-img-top" src="{{item.img}}" alt="">
+         <div class="card-body">
+           <h4 class="card-title">{{item.title}}</h4>
+           <p class="card-text">Text</p>
+         </div>
+       </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+        
+      </div></div>
+  </div>
+</div>
